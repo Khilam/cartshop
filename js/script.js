@@ -52,7 +52,7 @@ function onLoadCartNumbers(){
 
       if (productNumbers){
         localStorage.setItem('cartNumbers',productNumbers +1);  
-        document.querySelector('badge').textContent=productNumbers +1 
+        document.querySelector('.badge').textContent=productNumbers +1 
       }else{
         localStorage.setItem('cartNumbers',1);
         document.querySelector('.badge').textContent=1
