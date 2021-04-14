@@ -21,7 +21,7 @@ let cartRow= cartRows[i]
 let priceElement=cartRow.getElementsByClassName('cart-price')[0]
 let quantityElement=cartRow.getElementsByClassName('cart-quantity-input')[0]
 console.log(priceElement,quantityElement)
-let price = priceElement.innerHTML
+let price = priceElement.innerText
 console.log(cart-price)
    }
 }

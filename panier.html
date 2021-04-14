@@ -25,9 +25,13 @@
 </head>
 
     <body>
-      <nav class="navbar navbar-expand-lg ">
+      <nav class="navbar navbar-expand-md")>
+
+        <label for="menu-mobile" class="menu-mobile">Menu</label>
+        
+            <input type="checkbox" id="menu-mobile" role="button">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Logo</a>
+          <img src="images/white.png" class="logo" alt="logo white">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -59,21 +63,21 @@
       </nav>
       <!--tableau-->
       <div class="container cart-items">
-        <div class="row cart-row">
+        <div class="row cart-row-title">
             <!--La classe bg-info ajoute un fond bleu à l'élément-->
-            <div class="col "><strong>Articles</strong></div>
+            <div class="col column  "><strong>Articles</strong></div>
             <!--La classe bg-warning ajoute un fond jaune à l'élément-->
             <div class="col column"><strong>Prix</strong></div>
             <!--La classe bg-success ajoute un fond vert à l'élément-->
-            <div class="col " ><strong>Quantité</strong></div>
-            <div class="col "><strong>Supprimer</strong></div>
+            <div class="col column" ><strong>Quantité</strong></div>
+            <div class="col column"><strong>Supprimer</strong></div>
         </div>
         <hr>
         <div class="row cart-row">
         
           <!--La classe bg-info ajoute un fond bleu à l'élément-->
           <div class="col column">
-          <img src="images/im8.jpg" class="cart-item-image" alt="..." width="200" height="150">
+          <img src="images/im8.jpg" class="cart-item-image" alt="..." width="200" height="120">
           <!--La classe bg-warning ajoute un fond jaune à l'élément-->
           </div>
           <div class="col column">
@@ -85,11 +89,12 @@
           <div class="col column">
            <button type="button" class="btn btn-remove">Supprimer</button>
       </div>
-    </div>
+    
     <hr>
+    
       <div class="row cart-row">
         <div class="col column">
-          <img src="/images/im3.jpg" class="cart-item-image" alt="..." width="200" height="150" margin-top="">
+          <img src="images/im3.jpg" class="cart-item-image" alt="..." width="200" height="120" margin-top="">
           <!--La classe bg-warning ajoute un fond jaune à l'élément-->
           </div>
           <div class="col column">
@@ -109,7 +114,7 @@
         <!--La classe bg-warning ajoute un fond jaune à l'élément-->
         </div>
         <div class="col column">
-          <button type="button" class="btn btn-primary">Retour</button>
+          <button type="button" class="btn btn-primary"  onclick = "history.back()">Retour</button>
         </div>
         <!--La classe bg-success ajoute un fond vert à l'élément-->
         <div class="col column cart-Total">
@@ -125,7 +130,7 @@
     </div>
     <div class="row footer">
 
-    </div>
+    </nav>
  
 
                            
