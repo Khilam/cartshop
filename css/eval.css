@@ -199,6 +199,7 @@ a .list-title:hover {
   nav label{
     display: none;
   }
+  
   @media only screen and (max-width: 768px) {
     /* For mobile phones: */
   .navbar{
