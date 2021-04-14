@@ -199,7 +199,10 @@ a .list-title:hover {
   nav label{
     display: none;
   }
-  
+  .badge{
+    background-color: red;
+    
+  }
   @media only screen and (max-width: 768px) {
     /* For mobile phones: */
   .navbar{
