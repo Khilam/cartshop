@@ -74,8 +74,10 @@ function onLoadCartNumbers(){
     document.querySelector('.badge').textContent=productNumbers;
 
     }
+  
 
 }
+
   function cartNumbers(product){
       
       let productNumbers=localStorage.getItem('cartNumbers');
@@ -90,6 +92,7 @@ function onLoadCartNumbers(){
         localStorage.setItem('cartNumbers',1);
         document.querySelector('.badge').textContent=1
       }
+      
 setItems(product);
 
   }   function setItems(product){
@@ -113,6 +116,7 @@ setItems(product);
       
       localStorage.setItem('productsInCart', JSON.stringify(cartItems));
   }
+  
   function totalCost(product){
     // console.log('the product price is', product.price)
 let cartCost = localStorage.getItem('totalCost');
@@ -152,7 +156,9 @@ console.log(cartItems)
           </div>
           <div calss="total">
           €${item.inCart * item.price}
+         
           </div>
+         
           `
          
       })
@@ -167,16 +173,26 @@ console.log(cartItems)
       </div>
       `
 }
-
-
 }
+
+
+//----------
+
+function incrementValue()
+{
+    let value = parseInt(document.getElementsByClassName('fas').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value<10){
+        value++;
+            document.getElementsByClassName('fas').value = value;
+    }
+}
+
+//----------
   onLoadCartNumbers();
   dispalyCart()
 
-  $("#cartItems").on ("click",".delete-item", function(event){
-    var tag=$(this).attr("cartItems");
-    removeItemFromCart();
-  }) 
+ 
 
 
 

@@ -194,6 +194,10 @@ a .list-title:hover {
    
 
     }
+   .btn-cart{
+   background-color: blue;
+
+   }
     .products-container .fas{
       font-size: 25px;
       color:blue;

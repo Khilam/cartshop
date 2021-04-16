@@ -1,0 +1,133 @@
+<!--my new shoping cart-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+
+
+        </style>
+    </head>
+        <body>
+            <form id="add-form">
+                <lable>Name: <input id="item-name" type="text placeholder="Item Name></lable>
+                <lable>Price: <input id="item-price" type="number" step=""0.01palceholder="Price"></lable>
+                 <button type="submit">Add Item</button>
+
+            </form>
+            <div id="cart-qty">
+<!--QTY-->
+            </div>
+           
+<ul id="item-list">
+    <!--CART ITEMS-->
+</ul>
+<!--cart-total-->
+  <div id="cart-total">
+        <script>
+            let itemList = document.getElementById('item-list')
+            let cartQty = document.getElementById('cart-qty')
+            let cartTotal = document.getElementById('cart-total')
+            let addForm = document.getElementById('add-form')
+            let itemName = document.getElementById('item-name')
+            let itemPrice = document.getElementById('item-price')
+let cart=[]
+//------clicks on list--------
+itemList.onclick = function(e){
+    if (e.target && e.target.classList.contains('remove')){
+       let name = e.target.dataset.name
+       removeItem(name) 
+    }
+}
+//--------------------------------
+//EVENT FORMS/ ADD FORM-------------------------
+addForm.onsubmit = function(e){
+    e.preventDefault()
+    let name = itemName.value
+    let price = itemPrice.value
+    addItem(name, price)
+    
+}
+//ADD ITEM
+function addItem(name, price){
+    for (let i=0;i<cart.length;i++){
+        if (cart[i].name === name){
+            cart[i].qty+=1
+            //stop running code
+            showItems()
+            return
+        }
+    }
+    let item={ name, price, qty:1}
+cart.push(item)
+showItems()
+}
+//----------------------------------------
+//SHOW ITEMS
+function showItems(){
+  let qty=getQty()
+    //console.log(`you have ${qty} items`)
+    cartQty.innerHTML = `Vous avez ${qty} article dans votre panier`
+    let itemStr=''
+    for (let i=0; i<cart.length; i++){
+       // console.log(` ${cart[i].name} $${cart[i].price} * ${cart[i].qty}`)
+       let { name, price, qty} = cart[i]
+itemStr +=  ` <li>
+    ${name} $${price} * ${qty} = ${qty * price}
+    <button class="remove" data-name="${name}">Remove</button>
+    </li>`
+}
+itemList.innerHTML = itemStr
+cartTotal.innerHTML = `Total in cart : €${getTotal()} `
+}
+//-----------------------------------------
+//QGET UANTITé
+function getQty(){
+    let qty=0
+    for (let i=0; i<cart.length;i++){
+       qty+=cart[i].qty
+      
+    }
+    return qty
+}
+//-----------------------------------------
+//GET Total
+function getTotal(){
+    let total=0
+for (let i=0; i<cart.length; i++){
+    total+=cart[i].price*cart[i].qty
+
+}
+return total.toFixed(2)
+}
+//-----------------------------
+//REMOVE ITEM
+function removeItem(name, qty=0){
+    for (let i=0; i<cart.length; i++){
+        if(cart[i].name === name){
+        if (qty> 0){
+            cart[i].qty-=qty
+        }
+            if (cart[i].qty <1|| qty === 0 ){
+            cart.splice(i, 1)
+            }
+            showItems()
+            return
+        }
+
+    }
+}
+
+
+
+
+//-------------------------------------------------------
+
+//---REMOVE ---------------------------------------------------
+
+
+//REMOVE ALL-------------------------------------------------
+showItems()
+        </script>
+        </body>
+</html>
