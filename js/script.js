@@ -1,50 +1,83 @@
 let carts=document.querySelectorAll('.add-cart');
 let products = [
     {
-        name:'Guess',
-        price:500,
-        tag:'femme',
+        name:'Guess femme',
+        price:550,
+        tag:'Guessf',
         inCart:0
     },
     {
-        name:'Guess',
+        name:'Guess homme',
         price:450,
-        tag:'homme',
+        tag:'Guessh',
         inCart:0
     },
     {
-        name:'Festina',
-        price:250,
-        tag:'homme',
+        name:'Guess homme',
+        price:900,
+        tag:'Guesho',
         inCart:0
     },
     {
-        name:'Festina',
-        price:500,
-        tag:'femme',
+        name:'Guess homme',
+        price:750,
+        tag:'Guessomme',
         inCart:0
     },
     {
-        name:'Montre Céramique Noire Diamants Femme',
+        name:'Guess femme',
         price:800,
-        tag:'femme',
+        tag:'Guessfem',
+        inCart:0
+    },
+    {
+        name:'Festina femme',
+        price:350,
+        tag:'Festinafemm',
+        inCart:0
+    },
+    {
+        name:'Eterna homme',
+        price:500,
+        tag:'Eternahome',
+        inCart:0
+    },
+    {
+        name:'Eternafemme',
+        price:700,
+        tag:'Eternafemme',
+        inCart:0
+    },
+    {
+        name:'Dior femme',
+        price:500,
+        tag:'Diorfemme',
+        inCart:0
+    },
+    {
+        name:'Dior femme',
+        price:650,
+        tag:'Diorhmme',
         inCart:0
     }
 ];
 for (let i=0; i< carts.length; i++){
     carts[i].addEventListener('click', ()=>{
-        cartNumbers();
+        cartNumbers(products[i]);
+        totalCost(products[i]);
     })
 }
 function onLoadCartNumbers(){
     let productNumbers=localStorage.getItem('cartNumbers');
     if (productNumbers){
-        document.querySelector('.badge').textContent=productNumbers;
+    let productNumbers=localStorage.getItem('cartNumbers');
+    document.querySelector('.badge').textContent=productNumbers;
 
     }
 
 }
-  function cartNumbers(){
+  function cartNumbers(product){
+      
       let productNumbers=localStorage.getItem('cartNumbers');
       console.log(productNumbers)
       productNumbers=parseInt(productNumbers)
@@ -57,24 +90,102 @@ function onLoadCartNumbers(){
         localStorage.setItem('cartNumbers',1);
         document.querySelector('.badge').textContent=1
       }
+setItems(product);
 
-  }   
-     
+  }   function setItems(product){
+      let cartItems=localStorage.getItem('productsInCart')
+      cartItems = JSON.parse(cartItems)
+      console.log('my cart items are', cartItems)
+      if (cartItems != null){
+          if ( cartItems[product.tag] == undefined){
+              cartItems={
+                  ...cartItems,
+                  [product.tag] : product
+              }
+          }
+          cartItems[product.tag].inCart +=1;
+      }else{
+      product.inCart=1;
+     cartItems={
+          [product.tag]:product
+        }
+    }
+      
+      localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+  }
+  function totalCost(product){
+    // console.log('the product price is', product.price)
+let cartCost = localStorage.getItem('totalCost');
+
+console.log('the cartCost is', cartCost);
+console.log(typeof cartCost)
+if (cartCost != null){
+    cartCost=parseInt(cartCost)
+    localStorage.setItem("totalCost",cartCost + product.price);
+}else{
+
+localStorage.setItem("totalCost", product.price);
+
+  }
+}
+function dispalyCart(){
+    let cartItems= localStorage.getItem("productsInCart")
+    cartItems =JSON.parse(cartItems)
+let productContainer = document.querySelector(".products")
+let cartCost = localStorage.getItem('totalCost');
+console.log(cartItems)
+    if (cartItems && productContainer){
+      productContainer.innerHTML='';
+      Object.values(cartItems).map(item=>{
+          productContainer.innerHTML+= ` 
+          <div class="product">
+          <i class="fas fa-times-circle"></i>
+          
+              <img src="./js/images copy/${item.tag}.jpg">
+              <span>${item.name}</span>
+          </div>
+          <div class="price">€${item.price}</div>
+          <div class="quantity">
+          <i class="fas fa-arrow-circle-up"></i>
+          <span>${item.inCart}</span>
+          <i class="fas fa-arrow-circle-down"></i>
+          </div>
+          <div calss="total">
+          €${item.inCart * item.price}
+          </div>
+          `
+         
+      })
+      productContainer.innerHTML +=  ` 
+      <div class="bascketTotalContainer">
+      <h4 class="bascketTotalTitle">
+      Total
+      </h4>
+      <h4 calss="Total">
+      €${cartCost}
+      </h4>
+      </div>
+      `
+}
+
+
+}
   onLoadCartNumbers();
+  dispalyCart()
+
+  $("#cartItems").on ("click",".delete-item", function(event){
+    var tag=$(this).attr("cartItems");
+    removeItemFromCart();
+  }) 
 
 
 
-
-
-
-
-
-//let removeCartItemButtons= document.getElementsByClassName('btn-remove')
-//console.log(removeCartItemButtons)
-//for (let i=0; i<removeCartItemButtons.length;i++){
-   // let button=removeCartItemButtons[i]
-  // button.addEventListener('click', function(event){
-     
+//let removeCartItemsButtons= document.getElementsByClassName('fas fa-times-circle')
+//console.log(removeCartItemsButtons)
+//for (let i=0; i<removeCartItemsButtons.length;i++){
+   //let button=removeCartItemsButtons[i]
+  //button.addEventListener('click', function(event){
+     //console.log(clicked)
      //  let buttonClicked= event.target
 //buttonClicked.parentElement.parentElement.remove()
 //updateCartTotal()

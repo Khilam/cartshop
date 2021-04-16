@@ -53,88 +53,28 @@
               <i class="fas fa-user-edit"></i>
             </li>
             <li class="nav-item">
-              <i class="fas fa-shopping-cart"></i>
-              
+              <a href="panier.html">  <i class="fas fa-shopping-cart"></i> <span class="badge badge-light">0</span></a>        
             </li>
           </ul>
             </form>
           </div>
         </div>
       </nav>
-      <!--tableau-->
-      <div class="container cart-items">
-        <div class="row cart-row-title">
-            <!--La classe bg-info ajoute un fond bleu à l'élément-->
-            <div class="col column  "><strong>Articles</strong></div>
-            <!--La classe bg-warning ajoute un fond jaune à l'élément-->
-            <div class="col column"><strong>Prix</strong></div>
-            <!--La classe bg-success ajoute un fond vert à l'élément-->
-            <div class="col column" ><strong>Quantité</strong></div>
-            <div class="col column"><strong>Supprimer</strong></div>
-        </div>
-        <hr>
-        <div class="row cart-row">
-        
-          <!--La classe bg-info ajoute un fond bleu à l'élément-->
-          <div class="col column">
-          <img src="images/im8.jpg" class="cart-item-image" alt="..." width="200" height="120">
-          <!--La classe bg-warning ajoute un fond jaune à l'élément-->
-          </div>
-          <div class="col column">
-          <span class="cart-price">800,00 €</span>
-          </div>
-          <!--La classe bg-success ajoute un fond vert à l'élément-->
-          <div class="col column">
-            <input class="cart-quantity-input" type="number" id="tentacles" name="tentacles"></div>
-          <div class="col column">
-           <button type="button" class="btn btn-remove">Supprimer</button>
-      </div>
+     <!--panier-->
+<div class="products-container">
+  <div class="product-header">
+    <h5 class="product-title"> Articles</h5>
+    <h5 class="price">Prix</h5>
+    <h5 class="quantity">Quantité</h5>
+    <h5 class="total">Total</h5>
+  </div>
+  <div class="products">
     
-    <hr>
-    
-      <div class="row cart-row">
-        <div class="col column">
-          <img src="images/im3.jpg" class="cart-item-image" alt="..." width="200" height="120" margin-top="">
-          <!--La classe bg-warning ajoute un fond jaune à l'élément-->
-          </div>
-          <div class="col column">
-          <span class="cart-price">700,00 €</span>
-          </div>
-          <!--La classe bg-success ajoute un fond vert à l'élément-->
-          <div class="col column">
-            <input class="cart-quantity-input" type="number" id="tentacles" name="tentacles"></div>
-          <div class="col column">
-           <button type="button" class="btn btn-remove">Supprimer</button>
-      </div>
-    </div>
-    <hr>
-    <div class="row footer">
-      <div class="col column">
-      
-        <!--La classe bg-warning ajoute un fond jaune à l'élément-->
-        </div>
-        <div class="col column">
-          <input type="button" class="retour btn btn-primary" value="Retour" onclick="history.back()">
-        </div>
-        <!--La classe bg-success ajoute un fond vert à l'élément-->
-        <div class="col column cart-Total">
-          <strong class="cart-total-title">Total</strong>
-          <span class="cart-total-price">900.00 €</span>
-        </div>
-        <div class="col column">
-          <button type="button" class="btn btn-primary">Valider</button>
-     </div>
-    </div>
-    <div class="row footer">
-
-    </div>
-    <div class="row footer">
-
-    </nav>
+  </div>
  
 
                            
-          <script src="js/script.js"></script> 
+          <script src="js/script.js" ></script> 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js"></script> 
