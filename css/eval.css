@@ -12,14 +12,18 @@ main{
 }
 .logo{
   width: 100px;
-  height: 100px;
+  height: 50px;
 }
 .image{
   height: 500px;
   width: 100%;
+  margin-top: 50px;
+}
+.images{
+  margin-top: 10px;
 }
 .navbar{
-    background-color: #003a63;
+    background-color: #fff;
     position:absolute;
    
     height: 50px;
@@ -28,18 +32,18 @@ main{
     
 }
 .nav-link, .navbar-brand{
-  color: #fff;
+  color: black;
   margin: 30px;
 
 }
 
 .fas{
- margin: 30px;
-  color:#fff;
+ margin: 120px;
+  color: black;
 }
 h1{
   text-align: center;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-left: 0;
  
    
@@ -59,10 +63,6 @@ p{
     margin-top: 10px;
     background-color: lightcoral;
 }
-
-
-
-
 
 
 p{
@@ -87,26 +87,37 @@ a{
 a .list-title:hover {
     color: #003a63;
   }
-
-
 .btn{
     background-color: #f3f3f3;
- margin-left: 25px;
+ margin-top: 0px;
+ margin-bottom: 30px;
+ margin-left: -10px;
 }
+
 .row{
-    margin-top: 80px;
+    margin-top: 0;
 }
 .card{
     margin-top: 20px;
 }
-
 .footer-clean {
-    padding:50px 0;
-    background-color:#003a63;
-    
-   
+  position:relative;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+
   
-  }
+  background-color: #003a63;
+  color: white;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  
+}
+.item{
+  margin-top: 20px;
+}
+
   .parag{
       margin-top: 0;
       text-align: left;
@@ -135,7 +146,21 @@ a .list-title:hover {
   .parag{
     color: #fff;
   }
-  
+  .add::before{
+    content:'';
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    position: absolute;
+    z-index:-1;
+    background-color: var(#867a33);
+
+  }
+  .add{
+    z-index:1;
+  }
+
   
   .footer-clean ul a {
     color:inherit;
@@ -181,8 +206,62 @@ a .list-title:hover {
     display: none;
   }
   .badge{
-    background-color: red;
+    background-color: #e98d04;
+    margin-left: -20;
     
+  }
+  .container{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+  .container .card{
+    max-width: 300px;
+    position: relative;
+    height: 215px;
+    background-color: #003a63;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 5);
+    transition: 0.3s ease-in-out;
+  }
+  .container .card:hover{
+    height: 320px;
+  }
+  .container .card .imgs img{
+   max-width: 100%;
+   border-radius: 4px;
+  }
+  .container .card .imgs{
+    position: relative;
+    width: 180px;
+    height: 200px;
+    top: -40px;
+    left: -6px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 2);
+  }
+  .container .card .content{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+  .container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
   }
   /*******panier*****/
   .products-container{
@@ -191,22 +270,35 @@ a .list-title:hover {
     margin: 0 auto;
     margin-top: 100px;
     
-   
+  
 
     }
-   .btn-cart{
-   background-color: blue;
+    .add{
+      
+      border: none;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: inset 0 0 0 0 #e98d04;
+      transition: ease-out 0.3s;
+      
+    }
+    .add:hover{
+      box-shadow: inset 300px 0 0 0 #e98d04;
+      cursor: pointer;
 
-   }
+    }
+   
     .products-container .fas{
       font-size: 25px;
-      color:blue;
+      color:#003a63;
       margin-left: 10px;
       margin-right: 10px;
       cursor: pointer;
       border-bottom: 1 solid lightgrey;
+      height: 50px;
       
   }
+
  
   .product-header{
     width: 100%;
@@ -215,6 +307,7 @@ a .list-title:hover {
     display: flex;
     border-bottom:4px solid lightgrey;
     margin: 0 auto;
+   
 
   }
   .product-title{
@@ -236,9 +329,10 @@ a .list-title:hover {
   }
 .total{
   width: 10%;
-  border-bottom: 1 solid lightgrey;
+  border-bottom: 4 solid lightgrey;
   display: flex;
   align-items: center;
+  align-items:center;
 
 }
 .product{
@@ -276,106 +370,6 @@ a .list-title:hover {
   align-items: center;
 }
 
-
-  @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-  .navbar{
-  
-    background-color: #003a63;
-    position:absolute;
-   
-    height: 50px;
-    min-width:306px;  
-    top: 0;
-  }
-.nav input{
-  color-adjust: blue;
-  text-align:center;
-  padding: 12px 0px;
-}
-nav ul{
-  display: none;
-}
-nav label{
-  display: block;
-  
-}
-.logo { margin-left: 200px; 
-margin-top: 0;}  
-  
-.images{
-  display: none;
-}
-.text2, .list, .list-item, .Marque, .form-check {
-  display: none;
-}
-main{
-  width: 100%;
-}
-h1, p{
-  font-size: clamp (5px, 1vw,10px);
-  
- display: flex;
- 
-  }
-  main{
-    width: 100%;
-    margin-left: 0;
-  }
-  .cart-items{
-    width: 100%;
-    margin-left: 0;
-  
-  }
-  .cart-row-title{
-    display: none;
-  
-  }
-  hr{
-    display: none;
-  }
-  .column{
-   align-items: center;
-   padding-left:0;
-  
-  
-  }
-}
-
-
-
- /*@media screen and (max-width: 600px) {
-  .image{
-    height:200px;
-    
-  }
-  .navbar{
-      background-color: #003a63;
-      position:absolute;
-     
-      height: 50px;
-      min-width:306px;  
-      top: 0;
-      
-  }
-  .nav-link, .navbar-brand{
-    color: #fff;
-    margin: 30px;
-  
-  }
-  .parag{
-    display: none;
-  }
-  .fas{
-   margin: 30px;
-    color:#fff;
-  }
-  .card{
-    width:300px;
-    margin-left:-150px;
-
-  }
-  
 
   
   

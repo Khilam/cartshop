@@ -1,4 +1,6 @@
 let carts=document.querySelectorAll('.add-cart');
+
+
 let products = [
     {
         name:'Guess femme',
@@ -61,10 +63,15 @@ let products = [
         inCart:0
     }
 ];
+let incrementBtn = document.querySelector('.incQ')
+let decrementBtn = document.querySelector('.decQ')
+let incQty = document.querySelectorAll('.incQ')
+let decQty = document.querySelectorAll('.decQ')
 for (let i=0; i< carts.length; i++){
     carts[i].addEventListener('click', ()=>{
         cartNumbers(products[i]);
         totalCost(products[i]);
+        incrementValue(products[i])
     })
 }
 function onLoadCartNumbers(){
@@ -148,11 +155,12 @@ console.log(cartItems)
               <img src="./js/images copy/${item.tag}.jpg">
               <span>${item.name}</span>
           </div>
-          <div class="price">€${item.price}</div>
+          <div class="price">€${item.price}
+          </div>
           <div class="quantity">
-          <i class="fas fa-arrow-circle-up"></i>
+          <i class="fas fa-arrow-circle-up incQ"></i></button>
           <span>${item.inCart}</span>
-          <i class="fas fa-arrow-circle-down"></i>
+          <i class="fas fa-arrow-circle-down decQ"></i>
           </div>
           <div calss="total">
           €${item.inCart * item.price}
@@ -180,11 +188,12 @@ console.log(cartItems)
 
 function incrementValue()
 {
-    let value = parseInt(document.getElementsByClassName('fas').value, 10);
+    let value = parseInt(document.getElementsByClassName('quantity').value, 10);
     value = isNaN(value) ? 0 : value;
     if(value<10){
         value++;
-            document.getElementsByClassName('fas').value = value;
+            
+            document.getElementsByClassName("quantity")[0].innerHTML = `${item.inCart}`;
     }
 }
 
