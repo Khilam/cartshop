@@ -5,64 +5,65 @@ let products = [
     {
         name:'Guess femme',
         price:550,
-        tag:'Guessf',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     },
     {
         name:'Guess homme',
         price:450,
-        tag:'Guessh',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     },
     {
         name:'Guess homme',
         price:900,
-        tag:'Guesho',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     },
     {
         name:'Guess homme',
         price:750,
-        tag:'Guessomme',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     },
     {
         name:'Guess femme',
         price:800,
-        tag:'Guessfem',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     },
     {
         name:'Festina femme',
         price:350,
-        tag:'Festinafemm',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     },
     {
         name:'Eterna homme',
         price:500,
-        tag:'Eternahome',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     },
     {
         name:'Eternafemme',
         price:700,
-        tag:'Eternafemme',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     },
     {
         name:'Dior femme',
         price:500,
-        tag:'Diorfemme',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     },
     {
         name:'Dior femme',
         price:650,
-        tag:'Diorhmme',
-        inCart:0
+        tag:'/home/mouna/Bureau/Evaluation1/js/images copy/im1.jpg',
+        inCart:false
     }
 ];
+
 let incrementBtn = document.querySelector('.incQ')
 let decrementBtn = document.querySelector('.decQ')
 let incQty = document.querySelectorAll('.incQ')
@@ -175,7 +176,7 @@ console.log(cartItems)
       <h4 class="bascketTotalTitle">
       Total
       </h4>
-      <h4 calss="Total">
+      <h4 calss="bascketTotal">
       €${cartCost}
       </h4>
       </div>
@@ -231,4 +232,4 @@ function incrementValue()
         //let price = priceElement.innerText
         //console.log(cart-price)
           // }
-        //}
+        //}*/

@@ -19,6 +19,9 @@ main{
   width: 100%;
   margin-top: 50px;
 }
+h4{
+  color: #fff;
+}
 .images{
   margin-top: 10px;
 }
@@ -307,25 +310,27 @@ a .list-title:hover {
     display: flex;
     border-bottom:4px solid lightgrey;
     margin: 0 auto;
-   
+   background-color: #ccc;
 
   }
   .product-title{
     width: 45%;
     border-bottom: 1 solid lightgrey;
-
+    background-color: #ccc;
   }
   .price{
     width: 15%;
     border-bottom: 1 solid lightgrey;
     display: flex;
     align-items: center;
+    background-color: #ccc;
   }
   .quantity{
     width: 30%;
     border-bottom: 4 solid lightgrey;
     display: flex;
     align-items: center;
+    background-color: #ccc;
   }
 .total{
   width: 10%;
@@ -333,6 +338,8 @@ a .list-title:hover {
   display: flex;
   align-items: center;
   align-items:center;
+  background-color: #ccc;
+
 
 }
 .product{
@@ -342,11 +349,13 @@ a .list-title:hover {
   align-items:center;
   padding: 10 px 0;
   border-bottom: 1px solid lightgrey;
+  background-color: #ccc;
 }
 .products{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  background-color: #ccc;
 
 }
 .products img{
@@ -354,20 +363,49 @@ a .list-title:hover {
   
 
 }
+*body{
+  background-color: #c2924a;
+}
 .bascketTotalContainer{
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  height: 100%;
   padding: 10px 0;
+  color: #111;
   
+  
+
 }
 .bascketTotalTitle{
   width: 30%;
+  color: black;
 }
-.Total{
+h4{
+  color: #111;
+}
+
+.bascketTotal{
   width: 10%;
 
   align-items: center;
+  color: #111;
+}
+.retour{
+  background-color: #003a63;
+  color: #111;
+  margin-top: 10px;
+  
+}
+.valider{
+
+ background-color: #003a63;
+  color: #111;
+  margin-top: 10px;
+ justify-content: flex-end;
+ justify-content: flex-end;
+ align-items: flex-end;
+ margin-left: 500px;
 }
 
 
